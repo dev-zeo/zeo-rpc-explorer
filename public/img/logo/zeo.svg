@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFCF1B" offset="0%"></stop>
+            <stop stop-color="#FF4C06" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M30,4 C44.3594035,4 56,15.6405965 56,30 C56,44.3594035 44.3594035,56 30,56 C15.6405965,56 4,44.3594035 4,30 C4,15.6405965 15.6405965,4 30,4 Z M45,32 L25,32 L15,42 L35,42 L45,32 Z M47,18 L25,18 L15,28 L37,28 L47,18 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+    </g>
+</svg>

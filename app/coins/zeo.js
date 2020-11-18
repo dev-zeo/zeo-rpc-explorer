@@ -4,17 +4,17 @@ Decimal8 = Decimal.clone({ precision:8, rounding:8 });
 var currencyUnits = [
 	{
 		type:"native",
-		name:"BTC",
+		name:"",
 		multiplier:1,
 		default:true,
-		values:["", "btc", "BTC"],
+		values:["", "zeo", "ZEO"],
 		decimalPlaces:8
 	},
 	{
 		type:"native",
-		name:"mBTC",
+		name:"mZEO",
 		multiplier:1000,
-		values:["mbtc"],
+		values:["mzeo"],
 		decimalPlaces:5
 	},
 	{
@@ -50,38 +50,38 @@ var currencyUnits = [
 ];
 
 module.exports = {
-	name:"Bitcoin",
-	ticker:"BTC",
+	name:"Zeo",
+	ticker:"ZEO",
 	logoUrlsByNetwork:{
 		"main":"/img/logo/zeo.svg",
-		"test":"/img/logo/tbtc.svg",
-		"regtest":"/img/logo/tbtc.svg"
+		"test":"/img/logo/tzeo.svg",
+		"regtest":"/img/logo/tzeo.svg"
 	},
 	siteTitlesByNetwork: {
 		"main":"Zeo Explorer",
 		"test":"Testnet Explorer",
 		"regtest":"Regtest Explorer"
 	},
-	siteDescriptionHtml:"<b>BTC Explorer</b> is <a href='https://github.com/janoside/btc-rpc-explorer). If you run your own [Bitcoin Full Node](https://bitcoin.org/en/full-node), **BTC Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/janoside/btc-rpc-explorer) for a list of features and instructions for running.",
-	nodeTitle:"Bitcoin Full Node",
-	nodeUrl:"https://bitcoin.org/en/full-node",
-	demoSiteUrl: "https://explorer.btc21.org",
+	siteDescriptionHtml:"<b>ZEO Explorer</b> is <a href='https://github.com/janoside/zeo-rpc-explorer). If you run your own [Zeo Full Node](https://zeo.org/en/full-node), **ZEO Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/janoside/zeo-rpc-explorer) for a list of features and instructions for running.",
+	nodeTitle:"Zeo Full Node",
+	nodeUrl:"https://zeo.org/en/full-node",
+	demoSiteUrl: "https://explorer.zeo21.org",
 	miningPoolsConfigUrls:[
-		"https://raw.githubusercontent.com/btccom/Blockchain-Known-Pools/master/pools.json",
+		"https://raw.githubusercontent.com/zeocom/Blockchain-Known-Pools/master/pools.json",
 		"https://raw.githubusercontent.com/blockchain/Blockchain-Known-Pools/master/pools.json"
 	],
 	maxBlockWeight: 4000000,
 	maxBlockSize: 1000000,
 	difficultyAdjustmentBlockCount: 2016,
 	maxSupplyByNetwork: {
-		"main": new Decimal(20999817.31308491), // ref: https://bitcoin.stackexchange.com/a/38998
+		"main": new Decimal(20999817.31308491), // ref: https://zeo.stackexchange.com/a/38998
 		"test": new Decimal(21000000),
 		"regtest": new Decimal(21000000)
 	},
 	targetBlockTimeSeconds: 600,
 	targetBlockTimeMinutes: 10,
 	currencyUnits:currencyUnits,
-	currencyUnitsByName:{"BTC":currencyUnits[0], "mBTC":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
+	currencyUnitsByName:{"ZEO":currencyUnits[0], "mZEO":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
 	baseCurrencyUnit:currencyUnits[3],
 	defaultCurrencyUnit:currencyUnits[0],
 	feeSatoshiPerByteBucketMaxima: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100, 150],
@@ -278,9 +278,9 @@ module.exports = {
 			chain: "main",
 			blockHeight: 0,
 			blockHash: "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
-			summary: "The Bitcoin Genesis Block.",
-			alertBodyHtml: "This is the first block in the Bitcoin blockchain, known as the 'Genesis Block'. This block was mined by Bitcoin's creator Satoshi Nakamoto. You can read more about <a href='https://en.bitcoin.it/wiki/Genesis_block'>the genesis block</a>.",
-			referenceUrl: "https://en.bitcoin.it/wiki/Genesis_block"
+			summary: "The Zeo Genesis Block.",
+			alertBodyHtml: "This is the first block in the Zeo blockchain, known as the 'Genesis Block'. This block was mined by Zeo's creator Satoshi Nakamoto. You can read more about <a href='https://en.zeo.it/wiki/Genesis_block'>the genesis block</a>.",
+			referenceUrl: "https://en.zeo.it/wiki/Genesis_block"
 		},
 		{
 			type: "tx",
@@ -288,16 +288,16 @@ module.exports = {
 			chain: "main",
 			txid: "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
 			summary: "The coinbase transaction of the Genesis Block.",
-			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Bitcoin Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/bitcoin/bitcoin/issues/3303'>this brief discussion</a> among some of the <a href='https://bitcoin.org'>Bitcoin</a> developers.",
-			referenceUrl: "https://github.com/bitcoin/bitcoin/issues/3303"
+			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Zeo Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/zeo/zeo/issues/3303'>this brief discussion</a> among some of the <a href='https://zeo.org'>Zeo</a> developers.",
+			referenceUrl: "https://github.com/zeo/zeo/issues/3303"
 		},
 		{
 			type: "tx",
 			date: "2009-10-12",
 			chain: "main",
 			txid: "7dff938918f07619abd38e4510890396b1cef4fbeca154fb7aafba8843295ea2",
-			summary: "First bitcoin traded for fiat currency.",
-			alertBodyHtml: "In this first-known BTC-to-fiat transaction, 5,050 BTC were exchanged for 5.02 USD, at an effective exchange rate of ~0.001 USD/BTC.",
+			summary: "First zeo traded for fiat currency.",
+			alertBodyHtml: "In this first-known ZEO-to-fiat transaction, 5,050 ZEO were exchanged for 5.02 USD, at an effective exchange rate of ~0.001 USD/ZEO.",
 			referenceUrl: "https://twitter.com/marttimalmi/status/423455561703624704"
 		},
 		{
@@ -307,7 +307,7 @@ module.exports = {
 			address:"37k7toV1Nv4DfmQbmZ8KuZDQCYK9x5KpzP",
 			summary:"SHA1 collision bounty",
 			alertBodyHtml:"On September 13, 2013 a P2SH address was setup which allowed anyone who found a SHA1 collision to construct a transaction that could spend from this address.",
-			referenceUrl:"https://bitcointalk.org/index.php?topic=293382.0"
+			referenceUrl:"https://zeotalk.org/index.php?topic=293382.0"
 		},
 		{
 			type:"address",
@@ -316,7 +316,7 @@ module.exports = {
 			address:"35Snmmy3uhaer2gTboc81ayCip4m9DT4ko",
 			summary:"SHA256 collision bounty",
 			alertBodyHtml:"On September 13, 2013 a P2SH address was setup which allowed anyone who found a SHA256 collision to construct a transaction that could spend from this address.",
-			referenceUrl:"https://bitcointalk.org/index.php?topic=293382.0"
+			referenceUrl:"https://zeotalk.org/index.php?topic=293382.0"
 		},
 		{
 			type:"address",
@@ -325,7 +325,7 @@ module.exports = {
 			address:"3KyiQEGqqdb4nqfhUzGKN6KPhXmQsLNpay",
 			summary:"RIPEMD160 collision bounty",
 			alertBodyHtml:"On September 13, 2013 a P2SH address was setup which allowed anyone who found a RIPEMD160 collision to construct a transaction that could spend from this address.",
-			referenceUrl:"https://bitcointalk.org/index.php?topic=293382.0"
+			referenceUrl:"https://zeotalk.org/index.php?topic=293382.0"
 		},
 		{
 			type:"address",
@@ -334,7 +334,7 @@ module.exports = {
 			address:"39VXyuoc6SXYKp9TcAhoiN1mb4ns6z3Yu6",
 			summary:"RIPEMD160(SHA256()) collision bounty",
 			alertBodyHtml:"On September 13, 2013 a P2SH address was setup which allowed anyone who found a RIPEMD160(SHA256()) collision to construct a transaction that could spend from this address.",
-			referenceUrl:"https://bitcointalk.org/index.php?topic=293382.0"
+			referenceUrl:"https://zeotalk.org/index.php?topic=293382.0"
 		},
 		{
 			type:"address",
@@ -343,7 +343,7 @@ module.exports = {
 			address:"3DUQQvz4t57Jy7jxE86kyFcNpKtURNf1VW",
 			summary:"SHA256(SHA256()) collision bounty",
 			alertBodyHtml:"On September 13, 2013 a P2SH address was setup which allowed anyone who found a SHA256(SHA256()) collision to construct a transaction that could spend from this address.",
-			referenceUrl:"https://bitcointalk.org/index.php?topic=293382.0"
+			referenceUrl:"https://zeotalk.org/index.php?topic=293382.0"
 		},
 		{
 			type: "blockheight",
@@ -360,8 +360,8 @@ module.exports = {
 			chain: "main",
 			blockHeight: 210000,
 			blockHash: "000000000000048b95347e83192f69cf0366076336c639f9b7228e9ba171342e",
-			summary: "First block of subsidy era #2 (25 BTC).",
-			referenceUrl: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp#L1240"
+			summary: "First block of subsidy era #2 (25 ZEO).",
+			referenceUrl: "https://github.com/zeo/zeo/blob/master/src/validation.cpp#L1240"
 		},
 		{
 			type: "blockheight",
@@ -369,8 +369,8 @@ module.exports = {
 			chain: "main",
 			blockHeight: 420000,
 			blockHash: "000000000000000002cce816c0ab2c5c269cb081896b7dcb34b8422d6b74ffa1",
-			summary: "First block of subsidy era #3 (12.5 BTC).",
-			referenceUrl: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp#L1240"
+			summary: "First block of subsidy era #3 (12.5 ZEO).",
+			referenceUrl: "https://github.com/zeo/zeo/blob/master/src/validation.cpp#L1240"
 		},
 		{
 			type: "blockheight",
@@ -378,8 +378,8 @@ module.exports = {
 			chain: "main",
 			blockHeight: 630000,
 			blockHash: "000000000000000000024bead8df69990852c202db0e0097c1a12ea637d7e96d",
-			summary: "First block of subsidy era #4 (6.25 BTC).",
-			referenceUrl: "https://github.com/bitcoin/bitcoin/blob/master/src/validation.cpp#L1240"
+			summary: "First block of subsidy era #4 (6.25 ZEO).",
+			referenceUrl: "https://github.com/zeo/zeo/blob/master/src/validation.cpp#L1240"
 		},
 		{
 			type: "blockheight",
@@ -388,7 +388,7 @@ module.exports = {
 			blockHeight: 629999,
 			blockHash: "0000000000000000000d656be18bb095db1b23bd797266b0ac3ba720b1962b1e",
 			summary: "'Times 09/Apr/2020 With $2.3T Injection, Fed's Plan Far Exceeds 2008 Rescue'",
-			alertBodyHtml: "With the coinbase message 'Times 09/Apr/2020 With $2.3T Injection, Fed's Plan Far Exceeds 2008 Rescue', this final block of subsidy era #3 (12.5 BTC) echoes the spiritual call-to-action of <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Satoshi's genesis block</a>.",
+			alertBodyHtml: "With the coinbase message 'Times 09/Apr/2020 With $2.3T Injection, Fed's Plan Far Exceeds 2008 Rescue', this final block of subsidy era #3 (12.5 ZEO) echoes the spiritual call-to-action of <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Satoshi's genesis block</a>.",
 		},
 		{
 			type: "tx",
@@ -411,18 +411,18 @@ module.exports = {
 			date: "2010-05-22",
 			chain: "main",
 			txid: "a1075db55d416d3ca199f55b6084e2115b9345e16c5cf302fc80e9d5fbf5d48d",
-			summary: "The 'Bitcoin Pizza' transaction.",
-			alertBodyHtml: "This is the famous 'Bitcoin Pizza' transaction, one of the earliest 'real-world' transactions, in which 10,000 BTC was paid for 2 large pizzas worth ~41 USD (at an effective exchange rate of ~$0.04/BTC).",
-			referenceUrl: "https://bitcointalk.org/index.php?topic=137.0"
+			summary: "The 'Zeo Pizza' transaction.",
+			alertBodyHtml: "This is the famous 'Zeo Pizza' transaction, one of the earliest 'real-world' transactions, in which 10,000 ZEO was paid for 2 large pizzas worth ~41 USD (at an effective exchange rate of ~$0.04/ZEO).",
+			referenceUrl: "https://zeotalk.org/index.php?topic=137.0"
 		},
 		{
 			type: "tx",
 			date: "2011-05-18",
 			chain: "main",
 			txid: "5d80a29be1609db91658b401f85921a86ab4755969729b65257651bb9fd2c10d",
-			summary: "Destroyed bitcoin.",
-			referenceUrl: "https://bitcointalk.org/index.php?topic=7253.msg184414#msg184414",
-			referenceUrl2: "https://www.reddit.com/r/Bitcoin/comments/7mhoks/til_in_2011_a_user_running_a_modified_mining/"
+			summary: "Destroyed zeo.",
+			referenceUrl: "https://zeotalk.org/index.php?topic=7253.msg184414#msg184414",
+			referenceUrl2: "https://www.reddit.com/r/Zeo/comments/7mhoks/til_in_2011_a_user_running_a_modified_mining/"
 		},
 		{
 			type: "blockheight",
@@ -431,16 +431,16 @@ module.exports = {
 			blockHeight: 170,
 			blockHash: "00000000d1145790a8694403d4063f323d499e655c83426834d4ce2f8dd4a2ee",
 			summary: "First block containing a (non-coinbase) transaction.",
-			alertBodyHtml: "This block comes 9 days after the genesis block and is the first to contain a transfer of bitcoin. Before this block all blocks contained only coinbase transactions, which mint new bitcoin.<br/>See transaction #1 (f4184fc…) below for more info.",
-			referenceUrl: "https://bitcointalk.org/index.php?topic=91806.msg1012234#msg1012234"
+			alertBodyHtml: "This block comes 9 days after the genesis block and is the first to contain a transfer of zeo. Before this block all blocks contained only coinbase transactions, which mint new zeo.<br/>See transaction #1 (f4184fc…) below for more info.",
+			referenceUrl: "https://zeotalk.org/index.php?topic=91806.msg1012234#msg1012234"
 		},
 		{
 			type: "tx",
 			date: "2009-01-12",
 			chain: "main",
 			txid: "f4184fc596403b9d638783cf57adfe4c75c605f6356fbc91338530e9831e9e16",
-			summary: "The first transfer of bitcoin.",
-			alertBodyHtml: "This transaction represents the first ever transfer of bitcoin from one person to another. It also has the added distinction of being (one of?) the only known transfers of bitcoin from Satoshi Nakamoto, in this case sending bitcoin to Hal Finney as a test."
+			summary: "The first transfer of zeo.",
+			alertBodyHtml: "This transaction represents the first ever transfer of zeo from one person to another. It also has the added distinction of being (one of?) the only known transfers of zeo from Satoshi Nakamoto, in this case sending zeo to Hal Finney as a test."
 		},
 		{
 			type: "blockheight",
@@ -466,8 +466,8 @@ module.exports = {
 			chain: "main",
 			txid: "9bf8853b3a823bbfa1e54017ae11a9e1f4d08a854dcce9f24e08114f2c921182",
 			summary: "Block reward lost",
-			alertBodyHtml: "This coinbase transaction completely fails to collect the block's mining reward. 12.5 BTC were lost.",
-			referenceUrl: "https://bitcoin.stackexchange.com/a/67012/3397"
+			alertBodyHtml: "This coinbase transaction completely fails to collect the block's mining reward. 12.5 ZEO were lost.",
+			referenceUrl: "https://zeo.stackexchange.com/a/67012/3397"
 		},
 		{
 			type:"address",
@@ -484,8 +484,8 @@ module.exports = {
 			chain: "main",
 			txid: "e3bf3d07d4b0375638d5f1db5255fe07ba2c4cb067cd81b84ee974b6585fb468",
 			summary: "Duplicated coinbase transaction #1",
-			referenceUrl: "https://bitcoin.stackexchange.com/questions/38994/will-there-be-21-million-bitcoins-eventually/38998#38998",
-			alertBodyHtml: "This is one of 2 'duplicate coinbase' transactions. An early bitcoin bug (fixed by <a href='https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki'>BIP30</a>) allowed identical coinbase transactions - a newer duplicate would overwrite older copies. This transaction was the coinbase transaction for <a href='/block-height/91722'>Block #91,722</a> and, ~16 hours later, <a href='/block-height/91880'>Block #91,880</a>. The 50 BTC claimed as the coinbase for block 91,722 were also overwritten and lost."
+			referenceUrl: "https://zeo.stackexchange.com/questions/38994/will-there-be-21-million-zeos-eventually/38998#38998",
+			alertBodyHtml: "This is one of 2 'duplicate coinbase' transactions. An early zeo bug (fixed by <a href='https://github.com/zeo/bips/blob/master/bip-0030.mediawiki'>BIP30</a>) allowed identical coinbase transactions - a newer duplicate would overwrite older copies. This transaction was the coinbase transaction for <a href='/block-height/91722'>Block #91,722</a> and, ~16 hours later, <a href='/block-height/91880'>Block #91,880</a>. The 50 ZEO claimed as the coinbase for block 91,722 were also overwritten and lost."
 		},
 		{
 			type: "tx",
@@ -493,8 +493,8 @@ module.exports = {
 			chain: "main",
 			txid: "d5d27987d2a3dfc724e359870c6644b40e497bdc0589a033220fe15429d88599",
 			summary: "Duplicated coinbase transaction #2",
-			referenceUrl: "https://bitcoin.stackexchange.com/questions/38994/will-there-be-21-million-bitcoins-eventually/38998#38998",
-			alertBodyHtml: "This is one of 2 'duplicate coinbase' transactions. An early bitcoin bug (fixed by <a href='https://github.com/bitcoin/bips/blob/master/bip-0030.mediawiki'>BIP30</a>) allowed identical coinbase transactions - a newer duplicate would overwrite older copies. This transaction was the coinbase transaction for <a href='/block-height/91812'>Block #91,812</a> and, ~3 hours later, <a href='/block-height/91842'>Block #91,842</a>. The 50 BTC claimed as the coinbase for block 91,812 were also overwritten and lost."
+			referenceUrl: "https://zeo.stackexchange.com/questions/38994/will-there-be-21-million-zeos-eventually/38998#38998",
+			alertBodyHtml: "This is one of 2 'duplicate coinbase' transactions. An early zeo bug (fixed by <a href='https://github.com/zeo/bips/blob/master/bip-0030.mediawiki'>BIP30</a>) allowed identical coinbase transactions - a newer duplicate would overwrite older copies. This transaction was the coinbase transaction for <a href='/block-height/91812'>Block #91,812</a> and, ~3 hours later, <a href='/block-height/91842'>Block #91,842</a>. The 50 ZEO claimed as the coinbase for block 91,812 were also overwritten and lost."
 		},
 		{
 			type: "tx",
@@ -509,7 +509,7 @@ module.exports = {
 			chain: "main",
 			txid: "cb1440c787d8a46977886405a34da89939e1b04907f567bf182ef27ce53a8d71",
 			summary: "Very old coins (mined ~1 month after genesis) move unexpectedly, causing uproar",
-			alertBodyHtml: "On May 5, 2020, 50 BTC mined on Feb 9, 2009 (~1 month after Satoshi mined the Genesis block), moved unexpectedly after being dormant for 11+ years. Some observers wondered if they were coins from Satoshi's stash (they likely <a href='https://twitter.com/zackvoell/status/1263120133054255104'>were not</a>) and got excited.",
+			alertBodyHtml: "On May 5, 2020, 50 ZEO mined on Feb 9, 2009 (~1 month after Satoshi mined the Genesis block), moved unexpectedly after being dormant for 11+ years. Some observers wondered if they were coins from Satoshi's stash (they likely <a href='https://twitter.com/zackvoell/status/1263120133054255104'>were not</a>) and got excited.",
 			referenceUrl: "https://twitter.com/WhalePanda/status/1263120678380867586"
 		},
 		{
@@ -517,8 +517,8 @@ module.exports = {
 			date: "2020-07-15",
 			chain: "main",
 			address: "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
-			summary: "July 2020 Twitter hack BTC address",
-			alertBodyHtml: "On July 15, 2020 a hack involving many prominent Twitter accounts, including Elon Musk's, Bill Gates', and Cash App's, scammed many people to send BTC to this address.",
+			summary: "July 2020 Twitter hack ZEO address",
+			alertBodyHtml: "On July 15, 2020 a hack involving many prominent Twitter accounts, including Elon Musk's, Bill Gates', and Cash App's, scammed many people to send ZEO to this address.",
 			referenceUrl: "https://twitter.com/lawmaster/status/1283694581926723585"
 		},
 
@@ -531,9 +531,9 @@ module.exports = {
 			chain: "test",
 			blockHeight: 0,
 			blockHash: "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
-			summary: "The Bitcoin (regtest) Genesis Block.",
-			alertBodyHtml: "This is the first block in the Bitcoin blockchain, known as the 'Genesis Block'. You can read more about <a href='https://en.bitcoin.it/wiki/Genesis_block'>the genesis block</a>.",
-			referenceUrl: "https://en.bitcoin.it/wiki/Genesis_block"
+			summary: "The Zeo (regtest) Genesis Block.",
+			alertBodyHtml: "This is the first block in the Zeo blockchain, known as the 'Genesis Block'. You can read more about <a href='https://en.zeo.it/wiki/Genesis_block'>the genesis block</a>.",
+			referenceUrl: "https://en.zeo.it/wiki/Genesis_block"
 		},
 		{
 			type: "tx",
@@ -541,8 +541,8 @@ module.exports = {
 			chain: "test",
 			txid: "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
 			summary: "The coinbase transaction of the Genesis Block.",
-			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Bitcoin Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/bitcoin/bitcoin/issues/3303'>this brief discussion</a> among some of the <a href='https://bitcoin.org'>Bitcoin</a> developers.",
-			referenceUrl: "https://github.com/bitcoin/bitcoin/issues/3303"
+			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Zeo Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/zeo/zeo/issues/3303'>this brief discussion</a> among some of the <a href='https://zeo.org'>Zeo</a> developers.",
+			referenceUrl: "https://github.com/zeo/zeo/issues/3303"
 		},
 
 
@@ -553,9 +553,9 @@ module.exports = {
 			chain: "regtest",
 			blockHeight: 0,
 			blockHash: "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206",
-			summary: "The Bitcoin (regtest) Genesis Block.",
-			alertBodyHtml: "This is the first block in the Bitcoin blockchain, known as the 'Genesis Block'. You can read more about <a href='https://en.bitcoin.it/wiki/Genesis_block'>the genesis block</a>.",
-			referenceUrl: "https://en.bitcoin.it/wiki/Genesis_block"
+			summary: "The Zeo (regtest) Genesis Block.",
+			alertBodyHtml: "This is the first block in the Zeo blockchain, known as the 'Genesis Block'. You can read more about <a href='https://en.zeo.it/wiki/Genesis_block'>the genesis block</a>.",
+			referenceUrl: "https://en.zeo.it/wiki/Genesis_block"
 		},
 		{
 			type: "tx",
@@ -563,8 +563,8 @@ module.exports = {
 			chain: "regtest",
 			txid: "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
 			summary: "The coinbase transaction of the Genesis Block.",
-			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Bitcoin Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/bitcoin/bitcoin/issues/3303'>this brief discussion</a> among some of the <a href='https://bitcoin.org'>Bitcoin</a> developers.",
-			referenceUrl: "https://github.com/bitcoin/bitcoin/issues/3303"
+			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Zeo Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/zeo/zeo/issues/3303'>this brief discussion</a> among some of the <a href='https://zeo.org'>Zeo</a> developers.",
+			referenceUrl: "https://github.com/zeo/zeo/issues/3303"
 		},
 	],
 	exchangeRateData:{

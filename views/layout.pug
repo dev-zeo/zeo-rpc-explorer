@@ -34,12 +34,12 @@ html(lang="en")
 						if (coinConfig.logoUrlsByNetwork && coinConfig.logoUrlsByNetwork[activeBlockchain])
 							img.header-image(src=coinConfig.logoUrlsByNetwork[activeBlockchain], alt="logo")
 						else
-							img.header-image(src="/img/logo/btc.svg", alt="logo")
+							img.header-image(src="/img/logo/zeo.png", alt="logo")
 
 						if (coinConfig.siteTitlesByNetwork && coinConfig.siteTitlesByNetwork[activeBlockchain])
 							span #{coinConfig.siteTitlesByNetwork[activeBlockchain]}
 						else
-							span Bitcoin Explorer
+							span Zeo Explorer
 						
 				button.navbar-toggler.navbar-toggler-right(type="button", data-toggle="collapse", data-target="#navbarNav", aria-label="collapse navigation")
 					span.navbar-toggler-icon
@@ -57,31 +57,13 @@ html(lang="en")
 
 								li.nav-item
 									a.nav-link.text-warning(title=`Current node's chain: ${activeBlockchain}` data-toggle="tooltip") [#{chainName}]
-
+								
 							if (config.siteTools)
-								li.nav-item.dropdown
-									a.nav-link.dropdown-toggle(href="javascript:void(0)", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
-										span  Tools
-									div.dropdown-menu.shadow(aria-label="Tools Items")
-										each itemIndex in config.site.prioritizedToolIdsList
-											- var item = config.siteTools[itemIndex];
-
-											a.dropdown-item(href=item.url)
-												i(class=item.fontawesome, style="width: 20px; margin-right: 10px;")
-												span  #{item.name}
-
-							if (config.site.header.dropdowns)
-								each dropdown, ddIndex in config.site.header.dropdowns
-									li.nav-item.dropdown
-										a.nav-link.dropdown-toggle(href="javascript:void(0)", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
-											span  #{dropdown.title}
-										div.dropdown-menu.shadow(aria-label=(dropdown.title + " Items"))
-											each dropdownLink in dropdown.links
-												a.dropdown-item(href=dropdownLink.url)
-													if (dropdownLink.imgUrl)
-														img(src=dropdownLink.imgUrl, style="width: 24px; height: 24px; margin-right: 8px;", alt=dropdownLink.name)
-													span  #{dropdownLink.name}
-
+								each itemIndex in config.site.prioritizedToolIdsList
+									li.nav-item
+										- var item = config.siteTools[itemIndex];
+										a.nav-link(href=item.url)
+											span  #{item.name}
 							
 						form.form-inline.mr-3(method="post", action="/search")
 							input(type="hidden", name="_csrf", value=csrfToken)
@@ -92,12 +74,6 @@ html(lang="en")
 										i.fas.fa-search
 
 						ul.navbar-nav
-							li.nav-item.dropdown
-								a.nav-link.dropdown-toggle(href="javascript:void(0)", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
-									span  Admin Tools
-								div.dropdown-menu.dropdown-menu-right.shadow(aria-label="Admin Tools Items")
-									a.dropdown-item(href="/admin") Admin Dashboard
-
 							li.nav-item.dropdown
 								a.nav-link.dropdown-toggle(href="javascript:void(0)", id="navbarDropdown", role="button", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
 									i.fas.fa-cog.mr-1 
@@ -122,15 +98,7 @@ html(lang="en")
 											i.fas.fa-check
 										span  Dark
 		
-		if (host && port && !homepage && config.site.header.showToolsSubheader)
-			div.container.mb-2.pt-2.d-lg-block.d-none.border-top(id="sub-menu", style="")
-				ul.nav
-					each itemIndex in config.site.subHeaderToolsList
-						- var item = config.siteTools[itemIndex];
-						li.nav-item
-							a.nav-link.text-white.px-2.text-decoration-underline.mr-3(href=item.url)
-								i.mr-1(class=item.fontawesome)
-								span #{item.name}
+
 		
 		- var bodyBgColor = "#f8f9fa;";
 		if (session.uiTheme && session.uiTheme == "dark")
@@ -211,7 +179,7 @@ html(lang="en")
 									
 									div.mt-2
 										- var demoSites = [];
-										- demoSites.push({url:"https://explorer.btc21.org", logoUrl:"/img/logo/btc.svg", title:"Bitcoin Explorer"});
+										- demoSites.push({url:"https://explorer.btc21.org", logoUrl:"/img/logo/zeo.svg", title:"Zeo Explorer"});
 										- demoSites.push({url:"https://testnet.btc21.org", logoUrl:"/img/logo/tbtc.svg", title:"Testnet Explorer"});
 
 										each demoSite in demoSites

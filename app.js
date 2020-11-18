@@ -208,7 +208,7 @@ function onRpcConnectionVerified(getnetworkinfo, getblockchaininfo) {
 
 	global.getnetworkinfo = getnetworkinfo;
 
-	var bitcoinCoreVersionRegex = /^.*\/Satoshi\:(.*)\/.*$/;
+	var bitcoinCoreVersionRegex = /^.*\/Zeo\:(.*)\/.*$/;
 
 	var match = bitcoinCoreVersionRegex.exec(getnetworkinfo.subversion);
 	if (match) {
@@ -458,7 +458,7 @@ app.continueStartup = function() {
 	}
 
 
-	loadMiningPoolConfigs();
+	//loadMiningPoolConfigs();
 
 
 	if (config.demoSite) {
